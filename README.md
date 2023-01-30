@@ -33,6 +33,8 @@ CREATE TABLE `lock_info` (
 ```
 4.  使用分布式锁
 ```
+      //tag是锁的唯一标识
+      //expiredSeconds是锁的有效时间 单位是秒 传-1或者小于0则锁是永久锁
       if (lockService.tryLock(tag, expiredSeconds)) {
             try {
                 //do something
