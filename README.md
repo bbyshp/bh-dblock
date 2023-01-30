@@ -5,19 +5,39 @@
 
 #### 软件架构
 软件架构说明
+基于springboot
+使用springboot jdbc操作数据库
 
 
-#### 安装教程
+#### 安装使用教程
+1.  引入maven依赖
+```
+          <dependency>
+              <groupId>com.byhot</groupId>
+              <artifactId>bh-dblock</artifactId>
+              <version>1.0.0</version>
+          </dependency>
+ ```
+2.  使用到的地方注入对象
+```
+    @Autowired
+    private LockService lockService;
+```
+3.  使用分布式锁
+```
+      if (lockService.tryLock(tag, expiredSeconds)) {
+            try {
+                //do something
+            } catch (Exception e) {
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+            } finally {
+                lockService.unlock(tag);
+            }
+        }else {
+            throw new Exception("获取锁失败");
+        }
+```
 
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
 
 #### 参与贡献
 
