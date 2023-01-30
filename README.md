@@ -10,7 +10,15 @@
 
 
 #### 安装使用教程
-1.  引入maven依赖
+1.  建表
+```
+CREATE TABLE `lock_info` (
+  `expiration_time` datetime NOT NULL,
+  `tag` varchar(255) NOT NULL,
+  PRIMARY KEY (`tag`)
+);
+```
+2.  引入maven依赖
 ```
           <dependency>
               <groupId>com.byhot</groupId>
@@ -18,12 +26,12 @@
               <version>1.0.0</version>
           </dependency>
  ```
-2.  使用到的地方注入对象
+3.  使用到的地方注入对象
 ```
     @Autowired
     private LockService lockService;
 ```
-3.  使用分布式锁
+4.  使用分布式锁
 ```
       if (lockService.tryLock(tag, expiredSeconds)) {
             try {
