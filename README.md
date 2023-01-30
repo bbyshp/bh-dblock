@@ -20,11 +20,11 @@ CREATE TABLE `lock_info` (
 ```
 2.  引入maven依赖
 ```
-          <dependency>
-              <groupId>com.byhot</groupId>
-              <artifactId>bh-dblock</artifactId>
-              <version>1.0.0</version>
-          </dependency>
+    <dependency>
+        <groupId>com.byhot</groupId>
+        <artifactId>bh-dblock</artifactId>
+        <version>1.0.0</version>
+    </dependency>
  ```
 3.  使用到的地方注入对象
 ```
