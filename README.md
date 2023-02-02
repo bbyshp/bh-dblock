@@ -21,7 +21,7 @@ CREATE TABLE `lock_info` (
 2.  引入maven依赖
 ```
     <dependency>
-        <groupId>com.github.bbyshp</groupId>
+        <groupId>io.github.bbyshp</groupId>
         <artifactId>bh-dblock</artifactId>
         <version>1.0.0</version>
     </dependency>
