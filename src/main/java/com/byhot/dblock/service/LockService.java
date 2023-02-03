@@ -6,7 +6,7 @@ public interface LockService {
      * 尝试获取锁
      * @param tag 锁的键
      * @param expiredSeconds 锁的过期时间（单位：秒），默认10s
-     * @return
+     * @return boolean
      */
     boolean tryLock(String tag, Integer expiredSeconds);
 
